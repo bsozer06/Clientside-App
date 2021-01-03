@@ -10,35 +10,44 @@ export class Fields {
 }
 
 export class Person {
-  Id: number;
-  Name: string;
-  Job: string;
-  Gender: string;
-  Age: number;
-  constructor(id: number, name: string, gender: string, age: number) {
-    this.Id = id;
-    this.Name = name;
-    this.Gender = gender;
-    this.Age = age;
+  id: number;
+  name: string;
+  job: string;
+  gender: string;
+  age: number;
+  fieldId: number;
+  constructor(id: number, name: string, gender: string, age: number, fieldId: number) {
+    this.id = id;
+    this.name = name;
+    this.gender = gender;
+    this.age = age;
+    this.fieldId = fieldId;
   }
 }
 
 export class Field {
-  //Geom: any;
-  Id: number;
-  IsActive: boolean;
-  Name: string;
-  NeighId: number;
-  PersonId: string;
-  CityId: number;
-  Wkt: string;
-  constructor(id: number, isActive:boolean, name: string, neighId: number, personId: string, cityId: number, wkt: string) {
-    this.Id = id;
-    this.IsActive = isActive;
-    this.Name = name;
-    this.NeighId = neighId;
-    this.PersonId = personId;
-    this.CityId = cityId;
-    this.Wkt = wkt;
+  geom: any;
+  id: number;
+  name: string;
+  isActive: boolean;
+  neighId: number;
+  person?: any;
+  personId: number;
+  cityId: number;
+  createdTime: Date;
+  wkt: string;
+  age: number;
+  constructor(id: number, name: string,  neighId: number,
+    person:any, isActive:boolean, personId: number, cityId: number, createdTime: Date,
+    wkt: string, age: number) {
+    this.id = id;
+    this.name = name;
+    this.neighId = neighId;
+    this.person = person;
+    this.isActive = isActive;
+    this.personId = personId;
+    this.cityId = cityId;
+    this.wkt = wkt;
+    this.age = age;
   }
 }

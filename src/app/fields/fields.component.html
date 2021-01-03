@@ -1,31 +1,50 @@
-<!-- <div class="row ml-1">
+<div class="row ml-1">
   <div class="col-md-7">
+    <div class="bg bg-warning" *ngIf="fields.length == 0">
+      <p>There is no data for the table</p>
+    </div>
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
           <th>Id</th>
-          <th>IsActive</th>
           <th>Name</th>
+          <th>IsActive</th>
           <th>NeighId</th>
+          <!-- <th>person</th> -->
           <th>PersonId</th>
+          <th>cityId</th>
+          <th>createdTime</th>
           <th>Wkt</th>
+          <th>People's Age</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let field of fields">
-          <td>{{ field.Id}}</td>
-          <td>{{ field.IsActive }}</td>
-          <td>{{ field.Name }}</td>
-          <td>{{ field.NeighId }}</td>
-          <td>{{ field.PersonId }}</td>
-          <td>{{ field.Wkt }}</td>
+          <td>{{ field.id }}</td>
+          <td>{{ field.name }}</td>
+          <td>{{ field.isActive }}</td>
+          <td>{{ field.neighId }}</td>
+          <!-- <td>{{ field.person }}</td> -->
+          <td>{{ field.personId }}</td>
+          <td>{{ field.cityId }}</td>
+          <td>{{ field.createdTime | date : "dd/MM/yyyy"}}</td>
+          <td style="max-width: 180px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap">{{ field.wkt }}</td>
+          <td>{{ field.age }}</td>
           <td>
-            <button class="btn btn-primary">Edit</button>
-            <button class="btn btn-danger">Delete</button>
+            <button [routerLink]="['/information/fields', field.id, 'edit']" class="btn btn-primary btn-sm">Edit</button>
+            <button [routerLink]="['/information/fields', field.id, 'delete']" class="btn btn-danger btn-sm">Delete</button>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-</div> -->
+  <!-- <div class="col-md-5">
+    <app-form [fields]="fields"></app-form> -->
+    <!-- <hr class="my-3">
+    <product-from [products]="products"></product-from> -->
+  <!-- </div> -->
+</div>

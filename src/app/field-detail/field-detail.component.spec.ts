@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MaincontentComponent } from './maincontent.component';
+import { FieldDetailComponent } from './field-detail.component';
 
-describe('MaincontentComponent', () => {
-  let component: MaincontentComponent;
-  let fixture: ComponentFixture<MaincontentComponent>;
+describe('FieldDetailComponent', () => {
+  let component: FieldDetailComponent;
+  let fixture: ComponentFixture<FieldDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MaincontentComponent ]
+      declarations: [ FieldDetailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MaincontentComponent);
+    fixture = TestBed.createComponent(FieldDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

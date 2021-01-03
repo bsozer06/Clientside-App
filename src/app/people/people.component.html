@@ -1,5 +1,8 @@
 <div class="row ml-1">
   <div class="col-md-7">
+    <div class="bg bg-warning" *ngIf="people.length == 0">
+      <p>There is no data for the table</p>
+    </div>
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
@@ -7,15 +10,17 @@
           <th>Name</th>
           <th>Gender</th>
           <th>Age</th>
+          <th>FieldId</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let p of people">
-          <td>{{ p.Id}}</td>
-          <td>{{ p.Name }}</td>
-          <td>{{ p.Gender }}</td>
-          <td>{{ p.Age }}</td>
+          <td>{{p.id}}</td>
+          <td>{{p.name }}</td>
+          <td>{{p.gender }}</td>
+          <td>{{p.age }}</td>
+          <td>{{p.fieldId}}</td>
           <td>
             <button class="btn btn-primary">Edit</button>
             <button class="btn btn-danger">Delete</button>

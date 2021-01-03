@@ -9,12 +9,13 @@ import { HomeComponent } from './navbar/home/home.component';
 import { InformationComponent } from './navbar/information/information.component';
 import { MapComponent } from './navbar/map/map.component';
 import { appRoutes } from './routes';
-import { MaincontentComponent } from './maincontent/maincontent.component';
 import { GisService } from './services/gis.service';
 import { PageNotFoundComponentComponent } from './navbar/page-not-found-component/page-not-found-component.component';
 import { PeopleComponent } from './people/people.component';
 import { FieldsComponent } from './fields/fields.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { FieldDetailComponent } from './field-detail/field-detail.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,15 +25,19 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     HomeComponent,
     InformationComponent,
     MapComponent,
-    MaincontentComponent,
     PageNotFoundComponentComponent,
     PeopleComponent,
-    FieldsComponent
+    FieldsComponent,
+    FieldDetailComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,     //Http client calismasi icini bunu import et !!!!
+    FormsModule,    // NgModel ile calismak icin
     RouterModule.forRoot(appRoutes)
+  ],
+  exports: [
+    RouterModule
   ],
   providers: [GisService],
   bootstrap: [AppComponent]

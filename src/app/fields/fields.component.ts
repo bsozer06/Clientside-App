@@ -6,7 +6,7 @@ import { GisService } from '../services/gis.service';
   selector: 'app-fields',
   templateUrl: './fields.component.html',
   styleUrls: ['./fields.component.css'],
-  providers:[GisService]
+  // providers:[GisService]
 })
 export class FieldsComponent implements OnInit {
 
@@ -16,18 +16,18 @@ export class FieldsComponent implements OnInit {
   constructor(private gisService: GisService) { }
 
   ngOnInit(): void {
-
+    this.getFields();
   }
   getFields() {
     this.gisService.getFields().subscribe(fields => {
       this.fields = fields
     });
-    console.log(this.fields);
   }
-  // getPeople() {
-  //   this.gisService.getPeople().subscribe(people => {
-  //     this.people = people;
+
+  // addField(field: Field) {
+  //   this.gisService.addField(field).subscribe(f => {
   //   })
   // }
+
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Person } from '../models/Models';
+import { People, Person } from '../models/Models';
 import { GisService } from '../services/gis.service';
 
 @Component({
@@ -11,18 +11,27 @@ import { GisService } from '../services/gis.service';
 export class PeopleComponent implements OnInit {
 
   selectedPerson: Person;
-  people: Person[];
+  people: Person[] = [];
 
   constructor(private gisService: GisService) { }
 
   ngOnInit(): void {
-    this.getPeople();   // change detection için server ve client arasinda !!!!
+    this.getPeople();   // change detection için -> server ve client arasinda !!!!
   }
 
   getPeople() {
     this.gisService.getPeople().subscribe(people => {
-      this.people = people
+        this.people = people
     });
-    console.log(this.people);
   }
+
+  onSelectedPerson(person: Person) {
+    this.selectedPerson = person;
+  }
+
+  // deletePerson(person: Person) {
+  //   this.gisService.deletePerson(person).subscribe(p => {
+  //     this.people.splice(this.people.findIndex(p => p.id == person.id), 1);
+  //   });
+  // }
 }
