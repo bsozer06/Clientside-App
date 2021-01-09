@@ -32,7 +32,6 @@ export class GisService {
   // deletePerson(person: Person): Observable<People> {
   //   return this.http.delete<People>(this.baseUrl + "api/people" + person.id);
   // }
-
   addField(field: Field): Observable<Field> {
     return this.http.post<Field>(this.baseUrl + "api/fields/", field);
   }

@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { FieldFormComponent } from './field-form/field-form.component';
@@ -13,9 +15,7 @@ import { GisService } from './services/gis.service';
 import { PageNotFoundComponentComponent } from './navbar/page-not-found-component/page-not-found-component.component';
 import { PeopleComponent } from './people/people.component';
 import { FieldsComponent } from './fields/fields.component';
-import { HttpClientModule } from '@angular/common/http';
 import { FieldDetailComponent } from './field-detail/field-detail.component';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     HttpClientModule,     //Http client calismasi icini bunu import et !!!!
-    FormsModule,    // NgModel ile calismak icin
+    FormsModule,    // NgModel ile calismak icin (form lar icinde)
     RouterModule.forRoot(appRoutes)
   ],
   exports: [

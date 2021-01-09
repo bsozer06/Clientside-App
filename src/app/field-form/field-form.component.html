@@ -1,15 +1,27 @@
-<form class="card m-3" style="width: 18rem; text-align:justify;">
-  <div class="card-header">
+<form class="card w-25 h-25 p-3 ">
+  <div class="card-header bg-primary text-white">
     Add Field
+  </div>
+  <div class="form-group mt-2">
+    <label for="name">Id</label>
+    <input type="text" #id class="form-control" id="id" placeholder="id">
   </div>
   <div class="form-group">
     <label for="name">Name</label>
     <input type="text" #name class="form-control" id="name" placeholder="Name">
   </div>
-  <div class="form-group">
-    <label for="isActive">IsActive</label>
-    <input type="checkbox" #isActive class="form-control" id="isActive" placeholder="IsActive">
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" for="isActive">Active</label>
+    </div>
+    <select #isActive class="custom-select" id="isActive">
+      <option selected>Choose...</option>
+      <option [value]='True'>true</option>    <!-- Ts icerisine True property tanimlandi = string to boolean for json request1! -->
+      <option [value]='False'>false</option>  <!-- Ts icerisine False property tanimlandi = string to boolean for json request1! -->
+    </select>
   </div>
+
   <div class="form-group">
     <label for="neighId">NeighId</label>
     <input type="number" #neighId class="form-control" id="neighId" placeholder="NeighId">
@@ -35,8 +47,9 @@
     <input type="number" #age class="form-control" id="age" placeholder="Age">
   </div>
   <button class="btn btn-primary btn-sm"
-    (click)="addField(name.value, isActive.value, neighId.value, personId.value, cityId.value, createdTime.value,
+    (click)="addField(id.value, name.value, isActive.value, neighId.value, personId.value, cityId.value, createdTime.value,
     wkt.value, age.value);
-    name.value=''; isActive.value=''; neighId.value=''; personId.value='';  cityId.value='';  createdTime.value='';
+    id.value=''; name.value=''; isActive.value=''; neighId.value=''; personId.value='';  cityId.value='';  createdTime.value='';
     wkt.value='';  age.value='';">Save</button>
+    <button class="btn btn-secondary btn-sm" (click)="backToField()">Back to Field</button>
 </form>

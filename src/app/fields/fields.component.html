@@ -1,9 +1,14 @@
+<!---butona basildiginda router'da tanimlandan fieldform'a yonlendirir. Metodu ilgili TS'de-->
+<button type="button" class="btn btn-success ml-3"  (click)="addFieldNav()"
+        routerLinkActive="active">Add Field</button>
+<button type="button" class="btn btn-secondary ml-1" (click)="backToHome()">Back</button>
+
 <div class="row ml-1">
   <div class="col-md-7">
     <div class="bg bg-warning" *ngIf="fields.length == 0">
       <p>There is no data for the table</p>
     </div>
-    <table class="table table-bordered table-striped">
+    <table class="table table-sm table-bordered table-striped">
       <thead>
         <tr>
           <th>Id</th>
@@ -32,19 +37,16 @@
           <td style="max-width: 180px;
                     overflow: hidden;
                     text-overflow: ellipsis;
-                    white-space: nowrap">{{ field.wkt }}</td>
+                    white-space:nowrap">{{ field.wkt }}</td>
           <td>{{ field.age }}</td>
           <td>
-            <button [routerLink]="['/information/fields', field.id, 'edit']" class="btn btn-primary btn-sm">Edit</button>
-            <button [routerLink]="['/information/fields', field.id, 'delete']" class="btn btn-danger btn-sm">Delete</button>
+            <button [routerLink]="['/fielddetail']" class="btn btn-primary btn-sm">Edit</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteField(field)">Delete</button>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-  <!-- <div class="col-md-5">
-    <app-form [fields]="fields"></app-form> -->
-    <!-- <hr class="my-3">
-    <product-from [products]="products"></product-from> -->
-  <!-- </div> -->
 </div>
+
+
