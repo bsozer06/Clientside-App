@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { formatWithOptions } from 'util';
 import { Field, Fields, Person } from '../models/Models';
 import { GisService } from '../services/gis.service';
 
@@ -13,10 +14,12 @@ export class FieldsComponent implements OnInit {
 
   selectedField: Field;
   fields: Field[] = [];
+  id: number;
 
-  constructor(private gisService: GisService, private router: Router) { }
+  constructor(private gisService: GisService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
     this.getFields();
   }
   getFields() {
@@ -24,6 +27,13 @@ export class FieldsComponent implements OnInit {
       this.fields = fields
     });
   }
+  // getField(id) {
+  //   this.gisService.getField(this.id)
+  //     .subscribe(f => {
+  //       console.log(f);
+  //       this.selectedField = f;
+  //     });
+  // }
 
   deleteField(field: Field) {
     var result = confirm("Are you sure to delete?");

@@ -48,8 +48,8 @@ export class FieldFormComponent implements OnInit {
     });
   }
 
-  // navigate to "/information/field" route by tihs method
+  // navigate to "/field" route by tihs method
   backToField(): any {
-    this.router.navigate(['information/fields']);
+    this.router.navigate(['fields']);
   }
 }

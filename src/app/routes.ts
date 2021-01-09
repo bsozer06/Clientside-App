@@ -12,16 +12,16 @@ export const appRoutes: Routes = [
   { path: "", component: HomeComponent },
   { path: "home", component: HomeComponent },
   { path: "information", component: InformationComponent },
-  { path: "information/people", component: PeopleComponent },
+  { path: "people", component: PeopleComponent },
   {
-    path: "information/fields", component: FieldsComponent
+    path: "fields", component: FieldsComponent
     // ,children: [
       // { path: ":id", component: ""},
     //   { path: ":id/edit", component: FieldFormComponent }
     // ]
   },
   { path: "fieldform", component: FieldFormComponent },     // add field values by form
-  { path: "fielddetail", component: FieldDetailComponent },
+  { path: "fields/detail/:id", component: FieldDetailComponent },
   { path: "map", component: MapComponent },
   { path: "**", component: PageNotFoundComponentComponent }   // Wildcard route for a 404 page
 ];

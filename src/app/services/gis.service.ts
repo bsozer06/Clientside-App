@@ -20,7 +20,7 @@ export class GisService {
     return this.http.get<Field[]>(this.baseUrl + 'api/fields');
   }
   getField(id): Observable<Field> {
-    return this.http.get<Field>(this.baseUrl + 'api/fields'+ id);
+    return this.http.get<Field>(this.baseUrl + 'api/fields/'+ id);
   }
 
   // addPerson(person: Person): Observable<People> {

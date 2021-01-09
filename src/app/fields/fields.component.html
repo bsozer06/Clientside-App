@@ -40,7 +40,7 @@
                     white-space:nowrap">{{ field.wkt }}</td>
           <td>{{ field.age }}</td>
           <td>
-            <button [routerLink]="['/fielddetail']" class="btn btn-primary btn-sm">Edit</button>
+            <button routerLink="detail/{{ field.id }}" class="btn btn-primary btn-sm">Edit</button>
             <button class="btn btn-danger btn-sm" (click)="deleteField(field)">Delete</button>
           </td>
         </tr>

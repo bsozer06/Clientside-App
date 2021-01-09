@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -34,6 +34,7 @@ import { FieldDetailComponent } from './field-detail/field-detail.component';
     BrowserModule,
     HttpClientModule,     //Http client calismasi icini bunu import et !!!!
     FormsModule,    // NgModel ile calismak icin (form lar icinde)
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   exports: [
