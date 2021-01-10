@@ -16,22 +16,13 @@ export class GisService {
   getPeople(): Observable<Person[]> {
     return this.http.get<Person[]>(this.baseUrl + 'api/people');
   }
+
   getFields(): Observable<Field[]> {
     return this.http.get<Field[]>(this.baseUrl + 'api/fields');
   }
   getField(id): Observable<Field> {
     return this.http.get<Field>(this.baseUrl + 'api/fields/'+ id);
   }
-
-  // addPerson(person: Person): Observable<People> {
-  //   return this.http.post<People>(this.baseUrl + 'api/people/', person);
-  // }
-  // updatePerson(person: Person): Observable<People> {
-  //   return this.http.put<People>(this.baseUrl + 'api/people/' + person.id, person);
-  // }
-  // deletePerson(person: Person): Observable<People> {
-  //   return this.http.delete<People>(this.baseUrl + "api/people" + person.id);
-  // }
   addField(field: Field): Observable<Field> {
     return this.http.post<Field>(this.baseUrl + "api/fields/", field);
   }

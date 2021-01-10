@@ -25,9 +25,9 @@ export class PeopleComponent implements OnInit {
     });
   }
 
-  onSelectedPerson(person: Person) {
-    this.selectedPerson = person;
-  }
+  // onSelectedPerson(person: Person) {
+  //   this.selectedPerson = person;
+  // }
 
   // deletePerson(person: Person) {
   //   this.gisService.deletePerson(person).subscribe(p => {

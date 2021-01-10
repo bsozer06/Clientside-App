@@ -34,7 +34,7 @@ import { FieldDetailComponent } from './field-detail/field-detail.component';
     BrowserModule,
     HttpClientModule,     //Http client calismasi icini bunu import et !!!!
     FormsModule,    // NgModel ile calismak icin (form lar icinde)
-    ReactiveFormsModule,
+    ReactiveFormsModule,    // reactive style instead of template-driven
     RouterModule.forRoot(appRoutes)
   ],
   exports: [

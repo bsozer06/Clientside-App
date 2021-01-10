@@ -1,52 +1,51 @@
 <!---butona basildiginda router'da tanimlandan fieldform'a yonlendirir. Metodu ilgili TS'de-->
-<button type="button" class="btn btn-success ml-3"  (click)="addFieldNav()"
-        routerLinkActive="active">Add Field</button>
+<button type="button" class="btn btn-success ml-3" (click)="addFieldNav()" routerLinkActive="active">Add Field</button>
 <button type="button" class="btn btn-secondary ml-1" (click)="backToHome()">Back</button>
 
-<div class="row ml-1">
-  <div class="col-md-7">
-    <div class="bg bg-warning" *ngIf="fields.length == 0">
-      <p>There is no data for the table</p>
-    </div>
-    <table class="table table-sm table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>IsActive</th>
-          <th>NeighId</th>
-          <!-- <th>person</th> -->
-          <th>PersonId</th>
-          <th>cityId</th>
-          <th>createdTime</th>
-          <th>Wkt</th>
-          <th>People's Age</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let field of fields">
-          <td>{{ field.id }}</td>
-          <td>{{ field.name }}</td>
-          <td>{{ field.isActive }}</td>
-          <td>{{ field.neighId }}</td>
-          <!-- <td>{{ field.person }}</td> -->
-          <td>{{ field.personId }}</td>
-          <td>{{ field.cityId }}</td>
-          <td>{{ field.createdTime | date : "dd/MM/yyyy"}}</td>
-          <td style="max-width: 180px;
+<div class="container">
+  <!-- <div class="row ml-1"> -->
+    <!-- <div class="col-md-7"> -->
+      <div class="bg bg-warning" *ngIf="fields.length == 0">
+        <p>There is no data for the table</p>
+      </div>
+      <table class="table table-sm table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>IsActive</th>
+            <th>NeighId</th>
+            <!-- <th>person</th> -->
+            <th>PersonId</th>
+            <th>cityId</th>
+            <th>createdTime</th>
+            <th>Wkt</th>
+            <th>People's Age</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let field of fields">
+            <td>{{ field.id }}</td>
+            <td>{{ field.name }}</td>
+            <td>{{ field.isActive }}</td>
+            <td>{{ field.neighId }}</td>
+            <!-- <td>{{ field.person }}</td> -->
+            <td>{{ field.personId }}</td>
+            <td>{{ field.cityId }}</td>
+            <td>{{ field.createdTime | date : "dd/MM/yyyy"}}</td>
+            <td style="max-width: 180px;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     white-space:nowrap">{{ field.wkt }}</td>
-          <td>{{ field.age }}</td>
-          <td>
-            <button routerLink="detail/{{ field.id }}" class="btn btn-primary btn-sm">Edit</button>
-            <button class="btn btn-danger btn-sm" (click)="deleteField(field)">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+            <td>{{ field.age }}</td>
+            <td>
+              <button routerLink="detail/{{ field.id }}" class="btn btn-primary btn-sm">Edit</button>
+              <button class="btn btn-danger btn-sm" (click)="deleteField(field)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    <!-- </div>
+  </div> -->
 </div>
-
-

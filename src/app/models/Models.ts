@@ -1,4 +1,4 @@
-// Backend'de olsuturulan entity'ler burada model olarak olusturulu !!!!
+// Backend'de olsuturulan entity'ler için burada model olarak olusturuldu !!!!
 export class People {
   people: Array<Person>;
   constructor() { }

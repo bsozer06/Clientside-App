@@ -23,42 +23,56 @@
   </main>
 </div> -->
 <div class="container col-5">
-  <div class="card my-3">
-    <div class="card-body">
-      <p class="bg bg-success text-white">Template-driven form was used here!</p>
-      <span class="badge badge-warning">Id: {{ field.id }}</span>
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" [(ngModel)]="field.name" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="isActive">isActive</label>
-        <input type="checkbox" [(ngModel)]="field.isActive" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="neighId">neighId</label>
-        <input [(ngModel)]="field.neighId" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="personId">personId</label>
-        <input [(ngModel)]="field.personId" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="cityId">cityId</label>
-        <input [(ngModel)]="field.cityId" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="createdTime">createdTime</label>
-        <input [(ngModel)]="field.createdTime" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="Wkt">Wkt</label>
-        <input [(ngModel)]="field.wkt" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="age">age</label>
-        <input [(ngModel)]="field.age" class="form-control">
-      </div>
+  <!-- <div class="card my-3"> -->
+  <!-- <div class="card-body"> -->
+  <!-- <form (ngSubmit)="onEdit()" #detailForm="ngForm"> -->
+    <p class="bg bg-success text-white">Template-driven form was used here!</p>
+    <span class="badge badge-warning">Id: {{ field.id }}</span>
+    <input type="hidden" #id name="id" [value]="field.id">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <!-- <input type="text" [(ngModel)]="field.name" class="form-control"> -->
+      <input [value]="field.name" #name type="text" class="form-control">
     </div>
-  </div>
+    <div class="form-group">
+      <label for="isActive">isActive</label>
+      <!-- <input type="checkbox" [(ngModel)]="field.isActive" class="form-control"> -->
+      <input [value]="field.isActive" #isActive type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="neighId">neighId</label>
+      <!-- <input [(ngModel)]="field.neighId" class="form-control"> -->
+      <input [value]="field.neighId" #neighId type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="personId">personId</label>
+      <!-- <input [(ngModel)]="field.personId" class="form-control"> -->
+      <input [value]="field.personId" #personId type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="cityId">cityId</label>
+      <!-- <input [(ngModel)]="field.cityId" class="form-control"> -->
+      <input [value]="field.cityId" #cityId type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="createdTime">createdTime</label>
+      <!-- <input [(ngModel)]="field.createdTime" class="form-control"> -->
+      <input [value]="field.createdTime" #createdTime type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="Wkt">Wkt</label>
+      <!-- <input [(ngModel)]="field.wkt" class="form-control"> -->
+      <input [value]="field.wkt" #wkt type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="age">age</label>
+      <!-- <input [(ngModel)]="field.age" class="form-control"> -->
+      <input [value]="field.age" #age type="text" class="form-control">
+    </div>
+    <!-- <button type="submit" class="btn btn-primary" (click)="onEdit()">Edit</button> -->
+    <button class="btn btn-primary" (click)="updateField(id.value, name.value, isActive.value, neighId.value,
+    personId.value, cityId.value, createdTime.value, wkt.value, age.value);
+    name.value='';">save/edit</button>
+  <!-- </form> -->
+  <!-- </div> -->
 </div>
