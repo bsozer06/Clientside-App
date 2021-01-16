@@ -1,7 +1,8 @@
 <app-navbar></app-navbar>
 <app-home></app-home>
 <app-information></app-information>
-<app-map></app-map>
+<app-map class="map" [center]="[3912489.7690, 4842274.4180]" [zoom]="6" (mapReady)="onMapReady($event)"></app-map>
+<!-- <app-map class="map" (mapReady)="onMapReady($event)"></app-map> -->
 <!-- <app-fields></app-fields> -->
 <!-- <app-people></app-people> -->
 <router-outlet></router-outlet>
